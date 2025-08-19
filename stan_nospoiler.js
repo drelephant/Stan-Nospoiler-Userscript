@@ -9,6 +9,7 @@
 // @match        https://play.stan.com.au/*
 // @run-at       document-end
 // @grant        none
+// @updateURL    https://github.com/drelephant/Stan-Nospoiler-Userscript/raw/refs/heads/main/stan_nospoiler.js
 // ==/UserScript==
 
 (function() {
