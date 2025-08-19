@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Stan Nospoiler
 // @namespace    http://tampermonkey.net/
-// @version      1.22
+// @version      1.23
 // @description  Toggle Timeline
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
@@ -14,7 +14,7 @@
 
 (function() {
 
-    console.log("Stan Nospoiler v1.22 userscript started!");
+    console.log("Stan Nospoiler v1.23 userscript started!");
 
     let video;
 
@@ -119,6 +119,10 @@
             display: none !important;
           }
           .hide-timeline .bar
+          {
+            display: none !important;
+          }
+          .hide-timeline .remaining
           {
             display: none !important;
           }
