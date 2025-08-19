@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Stan Nospoiler
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Toggle Timeline
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
@@ -14,7 +14,7 @@
 
 (function() {
 
-    console.log("Stan Toggle Timeline v1.1 userscript started!");
+    console.log("Stan Toggle Timeline userscript started!");
 
     function logCurrentTime() {
         var video = document.getElementsByTagName("video")[0];
@@ -87,6 +87,8 @@
         if (loaded) return;
         loaded = true;
 
+        alert('inside init function!');
+		console.log("inside init function");
         document.documentElement.classList.add('hide-timeline');
         document.documentElement.classList.add('timejump');
         document.documentElement.classList.add('show-current-time');
@@ -231,8 +233,13 @@
     }
 
     //waitForKeyElements(".vjs-progress-control", init);
-    waitForKeyElements(".vjs-control-bar-middle", init);
-    console.log("toggle-timeline found vjs-control-bar-middle");
+    //waitForKeyElements("div.controls", init);
+	//waitForKeyElements("#playercontainer", init); // could get to init with this
+    //waitForKeyElements("#player", init); // didn't call init
+    //waitForKeyElements("stan-player.svelte-nev5w6", init);
+    waitForKeyElements("#player", init);
+
+    console.log("finished waiting for key elements - should have run init by now??");
 
     //waitForKeyElements(".silverlightControlHost", init);
 
