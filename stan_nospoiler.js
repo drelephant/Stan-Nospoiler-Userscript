@@ -208,7 +208,7 @@
                 }
                 console.log("Entered time was " + text);
                 console.log("Time parsed as " + totalsecs + " secs");
-                var video = document.getElementsByTagName("video")[0];
+                //var video = document.getElementsByTagName("video")[0];
 				if (!relative) {
 					video.currentTime = totalsecs;
 				} else {
