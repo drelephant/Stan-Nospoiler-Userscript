@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Stan Nospoiler
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.21
 // @description  Toggle Timeline
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
@@ -14,7 +14,7 @@
 
 (function() {
 
-    console.log("Stan Toggle Timeline v1.2 userscript started!");
+    console.log("Stan Nospoiler v1.21 userscript started!");
 
     let video;
 
@@ -79,6 +79,7 @@
     let loaded = false;
 
     function init() {
+        console.log("Inside init loop");
         if (loaded) return;
         loaded = true;
 
@@ -113,7 +114,11 @@
           .backten {
             background-image:url(data:image/png;base64,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)  !important;
           }
-          .hide-timeline .controls--timeline
+          .hide-timeline .runtime
+          {
+            display: none !important;
+          }
+          .hide-timeline .bar
           {
             display: none !important;
           }
@@ -228,7 +233,7 @@
     }
 
     waitForKeyElements("STAN-PLAYER", () => {
-     setTimeout(init, 200); // <--- hacky
+     setTimeout(init, 1000); // <--- hacky
     });
 
     function killNode (jNode) {
